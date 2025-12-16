@@ -246,4 +246,4 @@ Built with WordPress Full Site Editing and WooCommerce blocks.
 ---
 
 **Version:** 1.0.0  
-**Last Updated:** 2025-01-16
+**Last Updated:** 2025-12-16
