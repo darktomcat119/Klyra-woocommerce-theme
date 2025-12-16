@@ -1,0 +1,17 @@
+{
+	"version": 2,
+	"title": "Dark Elegant",
+	"styles": {
+		"color": {
+			"background": "#1a1a1a",
+			"text": "#ffffff"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--custom--spacing--large)"
+		}
+	}
+}
+

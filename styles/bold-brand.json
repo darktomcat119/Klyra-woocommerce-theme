@@ -1,0 +1,18 @@
+{
+	"version": 2,
+	"title": "Bold Brand",
+	"styles": {
+		"color": {
+			"background": "#ffffff",
+			"text": "#000000"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)",
+			"fontWeight": "700"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--custom--spacing--large)"
+		}
+	}
+}
+

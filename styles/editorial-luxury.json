@@ -1,0 +1,17 @@
+{
+	"version": 2,
+	"title": "Editorial Luxury",
+	"styles": {
+		"color": {
+			"background": "#fafafa",
+			"text": "#2c2c2c"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--serif)"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--custom--spacing--xl)"
+		}
+	}
+}
+

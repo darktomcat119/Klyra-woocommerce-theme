@@ -1,0 +1,17 @@
+{
+	"version": 2,
+	"title": "Soft Minimal",
+	"styles": {
+		"color": {
+			"background": "#ffffff",
+			"text": "#1e1e1e"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--custom--spacing--large)"
+		}
+	}
+}
+

@@ -1,0 +1,17 @@
+{
+	"version": 2,
+	"title": "Glass Light",
+	"styles": {
+		"color": {
+			"background": "#f8f9fa",
+			"text": "#212529"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--custom--spacing--large)"
+		}
+	}
+}
+

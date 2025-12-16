@@ -1,0 +1,17 @@
+{
+	"version": 2,
+	"title": "Tech Modern",
+	"styles": {
+		"color": {
+			"background": "#f5f5f5",
+			"text": "#1a1a1a"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)"
+		},
+		"spacing": {
+			"blockGap": "var(--wp--custom--spacing--medium)"
+		}
+	}
+}
+
