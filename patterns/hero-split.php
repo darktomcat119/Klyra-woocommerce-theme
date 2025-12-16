@@ -14,6 +14,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$hero_split_image_url = get_stylesheet_directory_uri() . '/assets/images/hero-split-image.jpg';
 ?>
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|xxl","bottom":"var:preset|spacing|xxl"}}},"layout":{"type":"constrained"}} -->
@@ -43,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- wp:column {"width":"50%"} -->
 		<div class="wp-block-column" style="flex-basis:50%">
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-			<figure class="wp-block-image size-full"><img alt="<?php esc_attr_e( 'Hero Image', 'klyra' ); ?>" /></figure>
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( $hero_split_image_url ); ?>" alt="<?php esc_attr_e( 'Hero Image', 'klyra' ); ?>" /></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->

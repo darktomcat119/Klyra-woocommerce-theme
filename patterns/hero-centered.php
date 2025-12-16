@@ -14,10 +14,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$hero_image_url = get_stylesheet_directory_uri() . '/assets/images/hero-centered-bg.jpg';
 ?>
 
-<!-- wp:cover {"dimRatio":50,"overlayColor":"foreground","minHeight":600,"minHeightUnit":"px","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|xxl","bottom":"var:preset|spacing|xxl"}}}} -->
+<!-- wp:cover {"url":"<?php echo esc_url( $hero_image_url ); ?>","dimRatio":50,"overlayColor":"foreground","minHeight":600,"minHeightUnit":"px","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|xxl","bottom":"var:preset|spacing|xxl"}}}} -->
 <div class="wp-block-cover alignfull has-foreground-background-color has-background-dim" style="min-height:600px;padding-top:var(--wp--preset--spacing--xxl);padding-bottom:var(--wp--preset--spacing--xxl)">
+	<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Hero Background', 'klyra' ); ?>" src="<?php echo esc_url( $hero_image_url ); ?>" data-object-fit="cover"/>
 	<span aria-hidden="true" class="wp-block-cover__background has-foreground-background-color has-background-dim-50 has-background-dim"></span>
 	<div class="wp-block-cover__inner-container">
 		<!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
