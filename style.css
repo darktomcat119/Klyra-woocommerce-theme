@@ -1,0 +1,23 @@
+/*
+Theme Name: Klyra
+Theme URI: https://wordpress.org/themes/klyra
+Author: Your Name
+Author URI: https://example.com
+Description: A modern, highly customizable block theme built for WordPress Full Site Editing. Klyra is designed to be flexible, performant, and beautiful out of the box.
+Requires at least: 6.1
+Tested up to: 6.5
+Requires PHP: 7.4
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: klyra
+Tags: block-theme, full-site-editing, e-commerce, woocommerce, custom-colors, custom-menu, custom-logo, editor-style, featured-images, block-patterns, rtl-language-support, translation-ready, wide-blocks, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, accessibility-ready, blog, portfolio, business
+*/
+
+/*
+ * Klyra Theme Styles
+ * 
+ * This file is required for WordPress theme recognition.
+ * All styles are managed through theme.json and block styles.
+ */
+

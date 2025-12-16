@@ -1,0 +1,206 @@
+/**
+ * External Dependencies
+ */
+
+/**
+ * WordPress Dependencies
+ */
+import { __ } from '@wordpress/i18n';
+import { useState } from '@wordpress/element';
+import { Button, Card, CardBody, PanelBody, SelectControl, RangeControl } from '@wordpress/components';
+import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/edit-post';
+import { compose } from '@wordpress/compose';
+import { dispatch, useDispatch, withSelect } from '@wordpress/data';
+import apiFetch from '@wordpress/api-fetch';
+
+/**
+ * Internal Dependencies
+ */
+import WelcomeGuide from '../../components/welcome-guide';
+import SoftwareLicensing from '../../components/software-licensing';
+import icons from './icons';
+import './index.scss';
+import { config } from '../../../package';
+const { pluginName, slug, slugCamelCase } = config;
+
+const Plugin = ( props ) => {
+	const {
+		defaults: {
+			defaultFontSize,
+			defaultTagName,
+		},
+	} = props;
+
+	const [
+		defaultFontSizeState,
+		setDefaultFontSize
+	] = useState( defaultFontSize );
+
+	const [
+		defaultTagNameState,
+		setDefaultTagName
+	] = useState( defaultTagName );
+
+	const updatePluginSettings = async ( data, setting ) => {
+		// look at using apiRequest instead, reference block-pattern-builder
+		const request = apiFetch( {
+			path: `${ slug }/v1/settings/${ setting }`,
+			headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+			method: 'POST',
+			body: JSON.stringify( data )
+		} );
+
+		try {
+			const response = await request;
+			if ( response ) {
+				// need to test this snackbar update, reference block-pattern-builder
+				dispatch( `${ slug }/settings` ).updatePluginSettings( data );
+				const { createSuccessNotice } = useDispatch( 'core/notices' );
+				createSuccessNotice( 'Settings saved', {
+					type: 'snackbar',
+				} );
+
+				//dispatch( 'core/notices' ).createNotice( 'success', 'Setting saved.' );
+			}
+		} catch ( error ) {
+			const errorNotice = 'Setting was not updated, please try again.';
+			dispatch( 'core/notices' ).createNotice( 'error', errorNotice );
+		}
+	};
+
+	return (
+		<>
+			<PluginSidebarMoreMenuItem
+				target={ `${ slug }-settings` }
+			>
+				{ __( 'Klyra', 'create-block-plugin' ) }
+			</PluginSidebarMoreMenuItem>
+			<WelcomeGuide />
+			<PluginSidebar
+				title={ `${ pluginName } settings`}
+				name={ `${ slug }-settings` }
+			>
+				<Card
+					isBorderless
+					size="small"
+				>
+					<CardBody>
+						<p>
+							<strong>
+								{ __(
+									'This is an example using the <PluginSidebar /> component.',
+									'create-block-plugin'
+								) }
+							</strong>
+						</p>
+						<p>
+						{
+							__( 'Set defaults from the editor for the rich-text-block-with-plugin-settings.', 'create-block-plugin' )
+						}
+						</p>
+						<p>
+						{
+							__( 'Settings saved from the plugin sidebar are saved to both the global data store and to WordPress add_option().  Edit the settings in includes/class-register-plugin-settings.php.', 'create-block-plugin' )
+						}
+						</p>
+						<p>
+						{
+							__( 'Checkout the data store in src/stores/plugin-settings/index.js.  The store data is loaded using wp_localize_script in class-register-plugin-settings.php.', 'create-block-plugin' )
+						}
+						</p>
+						<p>
+						{
+							__( 'Edit this plugin sidebar in src/plugins/plugin-settings/index.js.  The store data is loaded using wp_localize_script in class-register-plugin-settings.php.', 'create-block-plugin' )
+						}
+						</p>
+					</CardBody>
+				</Card>
+				<PanelBody title={ __( 'Default settings', 'create-block-plugin' ) }>
+					<RangeControl
+						label={ __( 'Default font size', 'create-block-plugin' ) }
+						value={ defaultFontSizeState }
+						onChange={ ( fontSize ) => setDefaultFontSize( fontSize )	}
+						initialPosition={ defaultFontSizeState }
+						min={ 0 }
+						max={ 200 }
+						step={ 1 }
+					/>
+					<SelectControl
+						label={ __( 'Default html tag type', 'create-block-plugin' ) }
+						value={ defaultTagNameState }
+						onChange={ ( tagName ) => setDefaultTagName( tagName ) }
+						options={
+							[
+								{ value: 'p', label: __( 'p', 'create-block-plugin' ) },
+								{ value: 'h1', label: __( 'h1', 'create-block-plugin' ) },
+								{ value: 'h2', label: __( 'h2', 'create-block-plugin' ) },
+								{ value: 'h3', label: __( 'h3', 'create-block-plugin' ) },
+								{ value: 'h4', label: __( 'h4', 'create-block-plugin' ) },
+								{ value: 'h5', label: __( 'h5', 'create-block-plugin' ) },
+								{ value: 'h6', label: __( 'h6', 'create-block-plugin' ) },
+								{ value: 'div', label: __( 'div', 'create-block-plugin' ) },
+							]
+						}
+					/>
+					<Button
+						isSecondary
+						isSmall
+						onClick={ ( ) => {
+							const pluginSettings = {
+								defaults: {
+									defaultFontSize: defaultFontSizeState,
+									defaultTagName: defaultTagNameState,
+								}
+							};
+							updatePluginSettings( pluginSettings, 'defaults' );
+						} }
+					>
+					{ __( 'Save', 'create-block-plugin' ) }
+					</Button>
+				</PanelBody>
+				<PanelBody
+						initialOpen={ false }
+						title={ __( 'How To Guide', 'create-block-plugin' ) }
+						name={ `heading` }
+					>
+						<BaseControl
+							className={ `${ slug } mb-0 block` }
+							label={ __( `Quickly learn how to get the most bang for your buck out using the ${ pluginName } plugin.`, 'create-block-plugin' ) }
+						/>
+						<Button
+							className={ `${ slug } mb-3 block` }
+							isLink
+							onClick={ () => toggleFeature( `${ slugCamelCase }Guide` )	}
+						>
+							{ __( 'Learn More', 'create-block-plugin' ) }
+						</Button>
+					</PanelBody>
+					<PanelBody
+						initialOpen={ false }
+						title={ __( 'License', 'create-block-plugin' ) }
+						name={ `heading` }
+					>
+						<SoftwareLicensing label={ __( 'License Key', 'create-block-plugin' ) } />
+					</PanelBody>
+			</PluginSidebar>
+		</>
+	);
+};
+
+const PluginWithSettings = compose(
+	[
+		withSelect( ( select, props ) => {
+			const pluginSettings = select( `${ slug }/settings` ).getPluginSettings();
+
+			return pluginSettings;
+		} ),
+	]
+)( Plugin );
+
+const name = `${ slug }`;
+const settings = {
+	icon: icons.plugin,
+	render: PluginWithSettings,
+};
+
+export { name, settings };

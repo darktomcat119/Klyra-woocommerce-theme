@@ -1,0 +1,14 @@
+{
+	"name": "klyra/static-block",
+	"title": "Static Block",
+	"category": "klyra",
+	"attributes": {
+
+	},
+	"editorScript": "file:../../../build/index.js",
+	"style": "file:../../../build/style-index.css",
+	"editorStyle": "file:../../../build/index.css",
+	"supports": {
+
+	}
+}

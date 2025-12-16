@@ -1,0 +1,14 @@
+{
+	"name": "klyra/inner-block",
+	"title": "Inner Block",
+	"category": "klyra",
+	"attributes": {
+
+	},
+	"editorScript": "file:../../../build/index.js",
+	"style": "file:../../../build/style-index.css",
+	"editorStyle": "file:../../../build/index.css",
+	"supports": {
+
+	}
+}
