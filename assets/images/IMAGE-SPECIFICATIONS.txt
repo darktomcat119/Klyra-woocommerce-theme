@@ -1,0 +1,132 @@
+KLYRA THEME - IMAGE SPECIFICATIONS
+===================================
+
+IMPORTANT: All images must be OVERSIZED to fill entire space
+Images use object-fit:cover to fill containers without empty areas
+
+REQUIRED IMAGES (5)
+===================
+
+1. hero-centered-bg.jpg
+   ────────────────────
+   Dimensions: 3840×2160px (OVERSIZED)
+   Minimum: 2560×1440px
+   Aspect Ratio: 16:9 (landscape)
+   Type: Background (cover block)
+   Pattern: Hero Centered
+   Overlay: 50% dark
+   File Size: < 600KB (optimized)
+   Format: JPG or WebP
+   
+   Why Oversized:
+   - Container is full-width (1920px+ on desktop)
+   - Image must cover all screen sizes
+   - Ensures no empty space visible
+
+2. hero-split-image.jpg
+   ────────────────────
+   Dimensions: 2400×2400px (OVERSIZED)
+   Minimum: 1600×1600px
+   Aspect Ratio: 1:1 (square)
+   Type: Content (cover block)
+   Pattern: Hero Split
+   Overlay: None
+   File Size: < 400KB (optimized)
+   Format: JPG or WebP
+   
+   Why Oversized:
+   - Container is 50% width column (~600-800px)
+   - Image must fill entire column height
+   - Ensures no empty space visible
+
+3. category-1-bg.jpg
+   ─────────────────
+   Dimensions: 2400×1800px (OVERSIZED)
+   Minimum: 1600×1200px
+   Aspect Ratio: 4:3 (landscape)
+   Type: Background (cover block)
+   Pattern: Category Grid
+   Overlay: 50% dark
+   File Size: < 350KB (optimized)
+   Format: JPG or WebP
+   
+   Why Oversized:
+   - Container varies by screen size
+   - Image must cover all container sizes
+   - Ensures no empty space visible
+
+4. category-2-bg.jpg
+   ─────────────────
+   Dimensions: 2400×1800px (OVERSIZED)
+   Minimum: 1600×1200px
+   Aspect Ratio: 4:3 (landscape)
+   Type: Background (cover block)
+   Pattern: Category Grid
+   Overlay: 50% dark
+   File Size: < 350KB (optimized)
+   Format: JPG or WebP
+   
+   Why Oversized:
+   - Container varies by screen size
+   - Image must cover all container sizes
+   - Ensures no empty space visible
+
+5. category-3-bg.jpg
+   ─────────────────
+   Dimensions: 2400×1800px (OVERSIZED)
+   Minimum: 1600×1200px
+   Aspect Ratio: 4:3 (landscape)
+   Type: Background (cover block)
+   Pattern: Category Grid
+   Overlay: 50% dark
+   File Size: < 350KB (optimized)
+   Format: JPG or WebP
+   
+   Why Oversized:
+   - Container varies by screen size
+   - Image must cover all container sizes
+   - Ensures no empty space visible
+
+OPTIONAL IMAGES (3)
+===================
+
+6. testimonial-avatar-1.jpg
+   Dimensions: 120×120px
+   Aspect Ratio: 1:1 (square, displayed as circle)
+   Type: Avatar
+   Pattern: Testimonials (optional)
+
+7. testimonial-avatar-2.jpg
+   Dimensions: 120×120px
+   Aspect Ratio: 1:1 (square, displayed as circle)
+   Type: Avatar
+   Pattern: Testimonials (optional)
+
+8. testimonial-avatar-3.jpg
+   Dimensions: 120×120px
+   Aspect Ratio: 1:1 (square, displayed as circle)
+   Type: Avatar
+   Pattern: Testimonials (optional)
+
+TECHNICAL NOTES
+===============
+
+- All images use object-fit:cover CSS property
+- Images are set to width:100%; height:100%
+- This ensures images fill entire container space
+- Larger images = better coverage, no empty space
+- Images are cropped from center
+
+OPTIMIZATION
+============
+
+- Compress all images before use
+- Use WebP format when possible
+- Target file sizes as specified above
+- Use tools: TinyPNG, ImageOptim, Squoosh
+- Balance quality vs file size
+
+For detailed information, see:
+- docs/05-COMPLETE-IMAGE-LIST.md
+- docs/06-IMAGE-SIZING-GUIDE.md
+

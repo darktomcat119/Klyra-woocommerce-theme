@@ -1,0 +1,81 @@
+KLYRA THEME - IMAGE LIST
+========================
+
+REQUIRED IMAGES (5)
+-------------------
+
+1. hero-centered-bg.jpg
+   Size: 3840×2160px (OVERSIZED - fills entire space)
+   Minimum: 2560×1440px
+   Ratio: 16:9 (landscape)
+   Type: Background
+   Pattern: Hero Centered
+   Overlay: 50% dark
+   Note: Image must be oversized to fill space with object-fit:cover
+
+2. hero-split-image.jpg
+   Size: 2400×2400px (OVERSIZED - fills entire space)
+   Minimum: 1600×1600px
+   Ratio: 1:1 (square)
+   Type: Content
+   Pattern: Hero Split
+   Overlay: None
+   Note: Image must be oversized to fill column with object-fit:cover
+
+3. category-1-bg.jpg
+   Size: 2400×1800px (OVERSIZED - fills entire space)
+   Minimum: 1600×1200px
+   Ratio: 4:3 (landscape)
+   Type: Background
+   Pattern: Category Grid
+   Overlay: 50% dark
+   Note: Image must be oversized to fill space with object-fit:cover
+
+4. category-2-bg.jpg
+   Size: 2400×1800px (OVERSIZED - fills entire space)
+   Minimum: 1600×1200px
+   Ratio: 4:3 (landscape)
+   Type: Background
+   Pattern: Category Grid
+   Overlay: 50% dark
+   Note: Image must be oversized to fill space with object-fit:cover
+
+5. category-3-bg.jpg
+   Size: 2400×1800px (OVERSIZED - fills entire space)
+   Minimum: 1600×1200px
+   Ratio: 4:3 (landscape)
+   Type: Background
+   Pattern: Category Grid
+   Overlay: 50% dark
+   Note: Image must be oversized to fill space with object-fit:cover
+
+OPTIONAL IMAGES (3)
+-------------------
+
+6. testimonial-avatar-1.jpg
+   Size: 120×120px
+   Ratio: 1:1 (square, displayed as circle)
+   Type: Avatar
+   Pattern: Testimonials (optional enhancement)
+
+7. testimonial-avatar-2.jpg
+   Size: 120×120px
+   Ratio: 1:1 (square, displayed as circle)
+   Type: Avatar
+   Pattern: Testimonials (optional enhancement)
+
+8. testimonial-avatar-3.jpg
+   Size: 120×120px
+   Ratio: 1:1 (square, displayed as circle)
+   Type: Avatar
+   Pattern: Testimonials (optional enhancement)
+
+NOTES
+-----
+
+- All images should be optimized (< 300KB each)
+- Use WebP format when possible, JPG as fallback
+- Images should be industry-neutral and professional
+- Test with dark overlays for readability
+- For detailed specifications, see docs/05-COMPLETE-IMAGE-LIST.md
+

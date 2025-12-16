@@ -31,8 +31,8 @@ $category_3_url = get_stylesheet_directory_uri() . '/assets/images/category-3-bg
 		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:cover {"url":"<?php echo esc_url( $category_1_url ); ?>","minHeight":300,"minHeightUnit":"px","dimRatio":50,"overlayColor":"foreground"} -->
-			<div class="wp-block-cover has-foreground-background-color has-background-dim" style="min-height:300px">
-				<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Category 1', 'klyra' ); ?>" src="<?php echo esc_url( $category_1_url ); ?>" data-object-fit="cover"/>
+			<div class="wp-block-cover has-foreground-background-color has-background-dim" style="min-height:300px;height:100%;">
+				<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Category 1', 'klyra' ); ?>" src="<?php echo esc_url( $category_1_url ); ?>" data-object-fit="cover" style="object-fit:cover;object-position:center;width:100%;height:100%;min-width:100%;min-height:100%;"/>
 				<span aria-hidden="true" class="wp-block-cover__background has-foreground-background-color has-background-dim-50 has-background-dim"></span>
 				<div class="wp-block-cover__inner-container">
 					<!-- wp:heading {"textAlign":"center","level":3,"textColor":"background"} -->
@@ -47,8 +47,8 @@ $category_3_url = get_stylesheet_directory_uri() . '/assets/images/category-3-bg
 		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:cover {"url":"<?php echo esc_url( $category_2_url ); ?>","minHeight":300,"minHeightUnit":"px","dimRatio":50,"overlayColor":"foreground"} -->
-			<div class="wp-block-cover has-foreground-background-color has-background-dim" style="min-height:300px">
-				<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Category 2', 'klyra' ); ?>" src="<?php echo esc_url( $category_2_url ); ?>" data-object-fit="cover"/>
+			<div class="wp-block-cover has-foreground-background-color has-background-dim" style="min-height:300px;height:100%;">
+				<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Category 2', 'klyra' ); ?>" src="<?php echo esc_url( $category_2_url ); ?>" data-object-fit="cover" style="object-fit:cover;object-position:center;width:100%;height:100%;min-width:100%;min-height:100%;"/>
 				<span aria-hidden="true" class="wp-block-cover__background has-foreground-background-color has-background-dim-50 has-background-dim"></span>
 				<div class="wp-block-cover__inner-container">
 					<!-- wp:heading {"textAlign":"center","level":3,"textColor":"background"} -->
@@ -63,8 +63,8 @@ $category_3_url = get_stylesheet_directory_uri() . '/assets/images/category-3-bg
 		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:cover {"url":"<?php echo esc_url( $category_3_url ); ?>","minHeight":300,"minHeightUnit":"px","dimRatio":50,"overlayColor":"foreground"} -->
-			<div class="wp-block-cover has-foreground-background-color has-background-dim" style="min-height:300px">
-				<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Category 3', 'klyra' ); ?>" src="<?php echo esc_url( $category_3_url ); ?>" data-object-fit="cover"/>
+			<div class="wp-block-cover has-foreground-background-color has-background-dim" style="min-height:300px;height:100%;">
+				<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Category 3', 'klyra' ); ?>" src="<?php echo esc_url( $category_3_url ); ?>" data-object-fit="cover" style="object-fit:cover;object-position:center;width:100%;height:100%;min-width:100%;min-height:100%;"/>
 				<span aria-hidden="true" class="wp-block-cover__background has-foreground-background-color has-background-dim-50 has-background-dim"></span>
 				<div class="wp-block-cover__inner-container">
 					<!-- wp:heading {"textAlign":"center","level":3,"textColor":"background"} -->
