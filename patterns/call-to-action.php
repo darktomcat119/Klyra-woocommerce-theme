@@ -31,11 +31,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 		<div class="wp-block-buttons">
 			<!-- wp:button {"textColor":"foreground","style":{"color":{"background":"var:preset|color|background"}}} -->
-			<div class="wp-block-button"><a class="wp-block-button__link has-foreground-color has-text-color has-background-color has-background wp-element-button" href="#shop"><?php esc_html_e( 'Shop Now', 'klyra' ); ?></a></div>
+			<div class="wp-block-button"><a class="wp-block-button__link has-foreground-color has-text-color has-background wp-element-button" href="#shop" style="background-color:var(--wp--preset--color--background)"><?php esc_html_e( 'Shop Now', 'klyra' ); ?></a></div>
 			<!-- /wp:button -->
 
 			<!-- wp:button {"textColor":"background","style":{"color":{"background":"transparent"},"border":{"color":"var:preset|color|background","width":"2px"}}} -->
-			<div class="wp-block-button"><a class="wp-block-button__link has-background-color has-text-color has-border-color wp-element-button" style="border-width:2px;background-color:transparent" href="#contact"><?php esc_html_e( 'Learn More', 'klyra' ); ?></a></div>
+			<div class="wp-block-button"><a class="wp-block-button__link has-background-color has-text-color has-background has-border-color wp-element-button" href="#contact" style="border-color:var(--wp--preset--color--background);border-width:2px;background-color:transparent"><?php esc_html_e( 'Learn More', 'klyra' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

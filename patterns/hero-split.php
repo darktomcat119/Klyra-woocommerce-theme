@@ -44,16 +44,16 @@ $hero_split_image_url = get_stylesheet_directory_uri() . '/assets/images/hero-sp
 
 		<!-- wp:column {"width":"50%","verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
-			<!-- wp:cover {"url":"<?php echo esc_url( $hero_split_image_url ); ?>","dimRatio":0,"minHeight":500,"minHeightUnit":"px","isUserOverlayColor":true} -->
-			<div class="wp-block-cover" style="min-height:500px;height:100%;">
-				<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Hero Image', 'klyra' ); ?>" src="<?php echo esc_url( $hero_split_image_url ); ?>" data-object-fit="cover" style="object-fit:cover;object-position:center;width:100%;height:100%;min-width:100%;min-height:100%;"/>
-				<div class="wp-block-cover__inner-container">
-					<!-- wp:spacer {"height":"0px"} -->
-					<div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
-					<!-- /wp:spacer -->
-				</div>
+		<!-- wp:cover {"url":"<?php echo esc_url( $hero_split_image_url ); ?>","dimRatio":0,"minHeight":500,"minHeightUnit":"px","isUserOverlayColor":true} -->
+		<div class="wp-block-cover" style="min-height:500px">
+			<img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( $hero_split_image_url ); ?>" data-object-fit="cover"/>
+			<div class="wp-block-cover__inner-container">
+				<!-- wp:spacer {"height":"0px"} -->
+				<div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
 			</div>
-			<!-- /wp:cover -->
+		</div>
+		<!-- /wp:cover -->
 		</div>
 		<!-- /wp:column -->
 	</div>
