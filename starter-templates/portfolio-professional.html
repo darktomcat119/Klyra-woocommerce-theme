@@ -1,0 +1,69 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"inherit":true}} -->
+<main class="wp-block-group">
+	<!-- wp:pattern {"slug":"klyra/shared/hero-split"} /-->
+
+	<!-- wp:spacer {"height":"var:preset|spacing|xxl"} -->
+	<div style="height:var(--wp--preset--spacing--xxl)" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--xl)">
+		<!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"var:preset|font-size|gigantic","fontWeight":"700"},"spacing":{"margin":{"bottom":"var:preset|spacing|large"}}}} -->
+		<h2 class="wp-block-heading has-text-align-center" style="margin-bottom:var(--wp--preset--spacing--large);font-size:var(--wp--preset--font-size--gigantic);font-weight:700"><?php esc_html_e( 'Our Work', 'klyra' ); ?></h2>
+		<!-- /wp:heading -->
+
+		<!-- wp:gallery {"linkTo":"media","columns":4,"sizeSlug":"full","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}}}} -->
+		<figure class="wp-block-gallery has-nested-images columns-4 is-cropped">
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( klyra_get_image_url( 'portfolio-1.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio Item', 'klyra' ); ?>"/></figure>
+			<!-- /wp:image -->
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( klyra_get_image_url( 'portfolio-2.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio Item', 'klyra' ); ?>"/></figure>
+			<!-- /wp:image -->
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( klyra_get_image_url( 'portfolio-3.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio Item', 'klyra' ); ?>"/></figure>
+			<!-- /wp:image -->
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( klyra_get_image_url( 'portfolio-4.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio Item', 'klyra' ); ?>"/></figure>
+			<!-- /wp:image -->
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( klyra_get_image_url( 'portfolio-5.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio Item', 'klyra' ); ?>"/></figure>
+			<!-- /wp:image -->
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( klyra_get_image_url( 'portfolio-6.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio Item', 'klyra' ); ?>"/></figure>
+			<!-- /wp:image -->
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( klyra_get_image_url( 'portfolio-7.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio Item', 'klyra' ); ?>"/></figure>
+			<!-- /wp:image -->
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
+			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( klyra_get_image_url( 'portfolio-8.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio Item', 'klyra' ); ?>"/></figure>
+			<!-- /wp:image -->
+		</figure>
+		<!-- /wp:gallery -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:spacer {"height":"var:preset|spacing|xxl"} -->
+	<div style="height:var(--wp--preset--spacing--xxl)" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:pattern {"slug":"klyra/shared/stats-section"} /-->
+
+	<!-- wp:spacer {"height":"var:preset|spacing|xl"} -->
+	<div style="height:var(--wp--preset--spacing--xl)" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:pattern {"slug":"klyra/shared/team-section"} /-->
+
+	<!-- wp:spacer {"height":"var:preset|spacing|xl"} -->
+	<div style="height:var(--wp--preset--spacing--xl)" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:pattern {"slug":"klyra/shared/call-to-action"} /-->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+

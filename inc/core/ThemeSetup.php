@@ -121,6 +121,13 @@ class ThemeSetup {
 				'label' => __( 'Klyra - Call to Action', 'klyra' ),
 			)
 		);
+
+		register_block_pattern_category(
+			'klyra-starter-templates',
+			array(
+				'label' => __( 'Klyra - Starter Templates', 'klyra' ),
+			)
+		);
 	}
 }
 

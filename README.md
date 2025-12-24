@@ -6,8 +6,11 @@ A modern, highly customizable WordPress block theme built for WooCommerce stores
 
 - ✅ **Full Site Editing (FSE)** - Complete block-based customization
 - ✅ **WooCommerce Ready** - Fully compatible with WooCommerce blocks
-- ✅ **6 Style Variations** - Adapt to different industries and aesthetics
-- ✅ **7 Block Patterns** - Reusable, industry-neutral patterns
+- ✅ **10 Style Variations** - Adapt to different industries and aesthetics
+- ✅ **25+ Block Patterns** - Reusable patterns with style-specific variations
+- ✅ **15 Starter Templates** - Complete page templates for different industries
+- ✅ **Advanced Customization** - Customizer integration for enhanced control
+- ✅ **WooCommerce Enhancements** - Additional WooCommerce features and optimizations
 - ✅ **Design System** - Comprehensive design tokens via theme.json
 - ✅ **License Management** - Built-in licensing system for commercial distribution
 - ✅ **Multi-Industry** - Works for beauty, tech, fashion, shoes, jewelry, and more
