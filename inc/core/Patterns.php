@@ -134,6 +134,20 @@ class Patterns {
 	 * @param array $payload Payload.
 	 */
 	private function append_debug_log( $payload ) {
+		// Prefer ingest endpoint (avoids filesystem permission issues).
+		if ( function_exists( 'wp_remote_post' ) ) {
+			wp_remote_post(
+				'http://127.0.0.1:7242/ingest/abb7cd56-8175-400a-8613-c9a72c826faa',
+				array(
+					'headers'  => array( 'Content-Type' => 'application/json' ),
+					'body'     => wp_json_encode( $payload ),
+					'timeout'  => 0.5,
+					'blocking' => false,
+				)
+			);
+		}
+
+		// Fallback: direct write (may be blocked in some environments).
 		@file_put_contents( 'c:\\xampp\\htdocs\\wwoocommerce\\.cursor\\debug.log', wp_json_encode( $payload ) . "\n", FILE_APPEND ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged,WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents
 	}
 	// #endregion
@@ -194,6 +208,8 @@ class Patterns {
 				'description' => 'Description',
 				'categories'  => 'Categories',
 				'keywords'    => 'Keywords',
+				'blockTypes'  => 'Block Types',
+				'viewportWidth' => 'Viewport Width',
 			)
 		);
 
@@ -227,6 +243,17 @@ class Patterns {
 		if ( ! empty( $headers['keywords'] ) ) {
 			$keywords = array_map( 'trim', explode( ',', $headers['keywords'] ) );
 			$pattern_data['keywords'] = $keywords;
+		}
+
+		// Add block types (useful for template-part patterns).
+		if ( ! empty( $headers['blockTypes'] ) ) {
+			$block_types = array_map( 'trim', explode( ',', $headers['blockTypes'] ) );
+			$pattern_data['blockTypes'] = $block_types;
+		}
+
+		// Add viewport width for better inserter previews.
+		if ( ! empty( $headers['viewportWidth'] ) ) {
+			$pattern_data['viewportWidth'] = (int) $headers['viewportWidth'];
 		}
 
 		// Use normalized slug

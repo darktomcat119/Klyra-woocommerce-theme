@@ -7,7 +7,27 @@
 			"area": "header"
 		},
 		{
+			"name": "header-modern",
+			"area": "header"
+		},
+		{
+			"name": "header-centered",
+			"area": "header"
+		},
+		{
+			"name": "header-minimal",
+			"area": "header"
+		},
+		{
 			"name": "footer",
+			"area": "footer"
+		},
+		{
+			"name": "footer-columns",
+			"area": "footer"
+		},
+		{
+			"name": "footer-minimal",
 			"area": "footer"
 		}
 	],

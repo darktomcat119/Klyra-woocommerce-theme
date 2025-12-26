@@ -45,11 +45,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|medium"}}} -->
 			<div class="wp-block-group">
 				<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-				<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( klyra_get_image_url( 'product-carousel-1.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Featured Product', 'klyra' ); ?>" style="border-radius:8px"/></figure>
+				<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( klyra_get_image_url( 'hero-split-image.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Featured Product', 'klyra' ); ?>" style="border-radius:8px"/></figure>
 				<!-- /wp:image -->
 
 				<!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
-				<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( klyra_get_image_url( 'product-carousel-2.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Featured Product', 'klyra' ); ?>" style="border-radius:8px"/></figure>
+				<figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( klyra_get_image_url( 'hero-centered-bg.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Featured Product', 'klyra' ); ?>" style="border-radius:8px"/></figure>
 				<!-- /wp:image -->
 			</div>
 			<!-- /wp:group -->

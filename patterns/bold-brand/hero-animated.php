@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$hero_image_url = klyra_get_image_url( 'hero-animated-bg.jpg' );
+$hero_image_url = klyra_get_image_url( 'hero-centered-bg1.jpg' );
 ?>
 
 <!-- wp:cover {"url":"<?php echo esc_url( $hero_image_url ); ?>","dimRatio":30,"overlayColor":"foreground","minHeight":650,"minHeightUnit":"px","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|xxl","bottom":"var:preset|spacing|xxl"}}}} -->

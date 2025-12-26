@@ -15,18 +15,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$dark_video_url = klyra_get_image_url( 'hero-dark-video.mp4' );
-$dark_fallback = klyra_get_image_url( 'hero-dark-fallback.jpg' );
+$dark_fallback = klyra_get_image_url( 'hero-centered-bg.jpg' );
 ?>
 
 <!-- wp:cover {"dimRatio":50,"overlayColor":"foreground","minHeight":700,"minHeightUnit":"px","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|xxl","bottom":"var:preset|spacing|xxl"}}},"backgroundColor":"base"} -->
 <div class="wp-block-cover alignfull has-base-background-color has-foreground-background-color has-background-dim" style="min-height:700px;padding-top:var(--wp--preset--spacing--xxl);padding-bottom:var(--wp--preset--spacing--xxl)">
-	<!-- wp:html -->
-	<video class="wp-block-cover__image-background" autoplay loop muted playsinline style="object-fit:cover;width:100%;height:100%;min-width:100%;min-height:100%;position:absolute;top:0;left:0;z-index:0">
-		<source src="<?php echo esc_url( $dark_video_url ); ?>" type="video/mp4">
-		<img src="<?php echo esc_url( $dark_fallback ); ?>" alt="" style="object-fit:cover;width:100%;height:100%;min-width:100%;min-height:100%;position:absolute;top:0;left:0;z-index:0" />
-	</video>
-	<!-- /wp:html -->
+	<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+	<figure class="wp-block-image size-full"><img src="<?php echo esc_url( $dark_fallback ); ?>" alt="" style="object-fit:cover;width:100%;height:100%;min-width:100%;min-height:100%;position:absolute;top:0;left:0;z-index:0" /></figure>
+	<!-- /wp:image -->
 	<span aria-hidden="true" class="wp-block-cover__background has-foreground-background-color has-background-dim"></span>
 	<div class="wp-block-cover__inner-container">
 		<!-- wp:group {"layout":{"type":"constrained","contentSize":"900px"}} -->

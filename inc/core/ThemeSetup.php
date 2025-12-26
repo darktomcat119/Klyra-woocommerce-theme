@@ -94,6 +94,7 @@ class ThemeSetup {
 	 * @since 1.0.0
 	 */
 	public function register_pattern_categories() {
+		// Core Klyra categories.
 		register_block_pattern_category(
 			'klyra-hero',
 			array(
@@ -128,6 +129,44 @@ class ThemeSetup {
 				'label' => __( 'Klyra - Starter Templates', 'klyra' ),
 			)
 		);
+
+		// Common template-part categories (used by many block themes).
+		register_block_pattern_category(
+			'header',
+			array(
+				'label' => __( 'Headers', 'klyra' ),
+			)
+		);
+
+		register_block_pattern_category(
+			'footer',
+			array(
+				'label' => __( 'Footers', 'klyra' ),
+			)
+		);
+
+		// Style-specific categories (these must exist for style patterns to show in the inserter).
+		$styles = array(
+			'soft-minimal'     => __( 'Klyra - Soft Minimal', 'klyra' ),
+			'editorial-luxury' => __( 'Klyra - Editorial Luxury', 'klyra' ),
+			'bold-brand'       => __( 'Klyra - Bold Brand', 'klyra' ),
+			'tech-modern'      => __( 'Klyra - Tech Modern', 'klyra' ),
+			'glass-light'      => __( 'Klyra - Glass Light', 'klyra' ),
+			'dark-elegant'     => __( 'Klyra - Dark Elegant', 'klyra' ),
+			'minimalist'       => __( 'Klyra - Minimalist', 'klyra' ),
+			'vibrant'          => __( 'Klyra - Vibrant', 'klyra' ),
+			'professional'     => __( 'Klyra - Professional', 'klyra' ),
+			'creative'         => __( 'Klyra - Creative', 'klyra' ),
+		);
+
+		foreach ( $styles as $slug => $label ) {
+			register_block_pattern_category(
+				'klyra-' . $slug,
+				array(
+					'label' => $label,
+				)
+			);
+		}
 	}
 }
 
