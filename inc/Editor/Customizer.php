@@ -42,6 +42,18 @@ class Customizer {
 		// Add customizer sections and settings here
 		// This is a placeholder for future advanced customization features
 		
+		// Layout section.
+		if ( ! $wp_customize->get_section( 'klyra_layout' ) ) {
+			$wp_customize->add_section(
+				'klyra_layout',
+				array(
+					'title'       => __( 'Klyra: Layout', 'klyra' ),
+					'priority'    => 160,
+					'description' => __( 'Legacy Customizer options (Site Editor is recommended for block themes).', 'klyra' ),
+				)
+			);
+		}
+
 		// Example: Container width setting
 		$wp_customize->add_setting(
 			'klyra_container_width',

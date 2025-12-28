@@ -19,6 +19,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- wp:group {"align":"full","backgroundColor":"surface","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}}} -->
 <div class="wp-block-group alignfull has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--xl)">
+	<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|medium"},"border":{"bottom":{"color":"var:preset|color|tertiary","width":"1px"}}}} -->
+	<div class="wp-block-group alignwide" style="border-bottom-color:var(--wp--preset--color--tertiary);border-bottom-width:1px;padding-bottom:var(--wp--preset--spacing--small)">
+		<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"var:preset|font-size|small"}}} -->
+		<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small)"><?php esc_html_e( 'Secure checkout • Fast shipping • Easy returns', 'klyra' ); ?></p>
+		<!-- /wp:paragraph -->
+		<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"var:preset|font-size|small"}}} -->
+		<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small)"><?php esc_html_e( 'Visa • MasterCard • PayPal • Apple Pay', 'klyra' ); ?></p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+
 	<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|xl"}}} -->
 	<div class="wp-block-columns alignwide">
 		<!-- wp:column {"width":"35%"} -->
@@ -65,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- wp:paragraph {"textColor":"muted","style":{"typography":{"fontSize":"var:preset|font-size|small"}}} -->
 			<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small)"><?php esc_html_e( 'Get product news, launches, and exclusive offers.', 'klyra' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:pattern {"slug":"klyra/newsletter-signup"} /-->
+			<!-- wp:pattern {"slug":"klyra/newsletter-cta-compact"} /-->
 		</div>
 		<!-- /wp:column -->
 	</div>
@@ -80,9 +91,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|small"}},"textColor":"muted"} -->
 		<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small)"><?php esc_html_e( '© ', 'klyra' ); ?><?php echo esc_html( gmdate( 'Y' ) ); ?> <?php esc_html_e( 'All rights reserved.', 'klyra' ); ?></p>
 		<!-- /wp:paragraph -->
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|small"}},"textColor":"muted"} -->
-		<p class="has-muted-color has-text-color" style="font-size:var(--wp--preset--font-size--small)"><?php esc_html_e( 'Powered by WordPress + WooCommerce', 'klyra' ); ?></p>
-		<!-- /wp:paragraph -->
+		<!-- wp:social-links {"size":"has-small-icon-size","className":"is-style-logos-only"} -->
+		<ul class="wp-block-social-links has-small-icon-size is-style-logos-only">
+			<!-- wp:social-link {"service":"instagram","url":"#"} /-->
+			<!-- wp:social-link {"service":"facebook","url":"#"} /-->
+			<!-- wp:social-link {"service":"x","url":"#"} /-->
+		</ul>
+		<!-- /wp:social-links -->
 	</div>
 	<!-- /wp:group -->
 </div>

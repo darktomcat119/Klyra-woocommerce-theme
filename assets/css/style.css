@@ -1,13 +1,459 @@
 /**
- * Klyra Theme - Custom Styles
- * 
- * Additional styles to ensure images fill entire space
- * 
+ * Klyra Theme - Modern Styles
+ *
+ * Premium header/footer styling, navigation animations, and modern UI effects.
+ *
  * @package Klyra
  * @since 1.0.0
  */
 
-/* Ensure cover block images zoom and fill entire space */
+/* ==========================================================================
+   CSS Variables - Extended
+   ========================================================================== */
+:root {
+	/* Transitions */
+	--klyra-transition-fast: 0.15s ease;
+	--klyra-transition-normal: 0.25s ease;
+	--klyra-transition-slow: 0.4s ease;
+	--klyra-transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+	/* Shadows */
+	--klyra-shadow-header: 0 2px 20px rgba(0, 0, 0, 0.08);
+	--klyra-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+	--klyra-shadow-card: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+	/* Glassmorphism */
+	--klyra-glass-bg: rgba(255, 255, 255, 0.85);
+	--klyra-glass-blur: blur(12px);
+	--klyra-glass-border: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   Global Transitions
+   ========================================================================== */
+a,
+button,
+.wp-block-button__link,
+.wp-block-navigation-item__content,
+.wp-block-social-link-anchor,
+input,
+textarea {
+	transition: all var(--klyra-transition-normal);
+}
+
+/* ==========================================================================
+   Header Styles - Modern & Premium
+   ========================================================================== */
+
+/* Base header styling */
+.wp-block-template-part[data-slug*="header"],
+header.wp-block-template-part,
+[class*="header"] > .wp-block-group.alignfull:first-child {
+	position: relative;
+	z-index: 100;
+}
+
+/* Header with shadow on scroll (add .is-sticky class via JS if needed) */
+.wp-block-template-part.is-sticky,
+header.is-sticky {
+	position: sticky;
+	top: 0;
+	box-shadow: var(--klyra-shadow-header);
+	backdrop-filter: var(--klyra-glass-blur);
+	-webkit-backdrop-filter: var(--klyra-glass-blur);
+}
+
+/* Header announcement bar */
+.has-surface-background-color.has-background {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Main header row - subtle bottom border */
+.wp-block-group.alignfull:has(.wp-block-site-logo) {
+	border-bottom: 1px solid var(--wp--preset--color--tertiary, #f0f0f0);
+}
+
+/* ==========================================================================
+   Navigation - Premium Styling
+   ========================================================================== */
+
+/* Navigation container */
+.wp-block-navigation {
+	font-weight: 500;
+	gap: 0.25rem;
+}
+
+/* Navigation list - remove default gaps */
+.wp-block-navigation__container,
+.wp-block-navigation ul {
+	gap: 0.25rem !important;
+}
+
+/* Navigation items - spacing */
+.wp-block-navigation-item {
+	margin: 0;
+}
+
+/* Navigation links - base (multiple selectors for specificity) */
+.wp-block-navigation-item__content,
+.wp-block-navigation a.wp-block-navigation-item__content,
+.wp-block-navigation .wp-block-navigation-item a {
+	position: relative;
+	display: inline-block;
+	padding: 0.6em 1em !important;
+	color: var(--wp--preset--color--foreground, #1e1e1e);
+	text-decoration: none !important;
+	font-weight: 500;
+	font-size: 0.9375rem;
+	letter-spacing: -0.01em;
+	border-radius: 0.375rem;
+	transition: all var(--klyra-transition-fast);
+}
+
+/* Navigation links - hover background */
+.wp-block-navigation-item__content:hover,
+.wp-block-navigation a.wp-block-navigation-item__content:hover {
+	background-color: var(--wp--preset--color--surface, #f8f9fa);
+}
+
+/* Navigation links - hover underline effect */
+.wp-block-navigation-item__content::after {
+	content: '';
+	position: absolute;
+	bottom: 0.35em;
+	left: 1em;
+	right: 1em;
+	width: auto;
+	height: 2px;
+	background: linear-gradient(90deg, var(--wp--preset--color--primary, #0073aa), var(--wp--preset--color--accent, #00a0d2));
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform var(--klyra-transition-normal);
+	border-radius: 2px;
+}
+
+.wp-block-navigation-item__content:hover::after,
+.wp-block-navigation-item__content:focus::after,
+.wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content::after {
+	transform: scaleX(1);
+}
+
+/* Navigation links - hover color */
+.wp-block-navigation-item__content:hover,
+.wp-block-navigation-item__content:focus {
+	color: var(--wp--preset--color--primary, #0073aa);
+	background-color: var(--wp--preset--color--surface, #f8f9fa);
+}
+
+/* Active/current menu item */
+.wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content {
+	color: var(--wp--preset--color--primary, #0073aa);
+	font-weight: 600;
+	background-color: rgba(0, 115, 170, 0.08);
+}
+
+/* Submenu styling */
+.wp-block-navigation__submenu-container {
+	background: var(--wp--preset--color--background, #fff);
+	border: 1px solid var(--wp--preset--color--tertiary, #f0f0f0);
+	border-radius: var(--wp--custom--border-radius--medium, 0.5rem);
+	box-shadow: var(--klyra-shadow-card);
+	padding: 0.5rem 0;
+	min-width: 200px;
+	animation: klyra-fade-in var(--klyra-transition-fast) ease;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: 0.6em 1.2em;
+	display: block;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover {
+	background: var(--wp--preset--color--surface, #f8f9fa);
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item__content::after {
+	display: none; /* No underline in dropdown */
+}
+
+/* Mobile navigation overlay */
+.wp-block-navigation__responsive-container.is-menu-open {
+	animation: klyra-slide-in var(--klyra-transition-normal) ease;
+}
+
+/* ==========================================================================
+   Buttons - Modern Effects
+   ========================================================================== */
+
+.wp-block-button__link {
+	position: relative;
+	overflow: hidden;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	box-shadow: 0 2px 8px rgba(0, 115, 170, 0.2);
+}
+
+.wp-block-button__link:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(0, 115, 170, 0.3);
+}
+
+.wp-block-button__link:active {
+	transform: translateY(0);
+}
+
+/* Button shine effect on hover */
+.wp-block-button__link::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+	transition: left 0.5s ease;
+}
+
+.wp-block-button__link:hover::before {
+	left: 100%;
+}
+
+/* Outline button style */
+.wp-block-button.is-style-outline .wp-block-button__link {
+	box-shadow: none;
+	border-width: 2px;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+	background: var(--wp--preset--color--primary, #0073aa);
+	color: var(--wp--preset--color--background, #fff);
+	box-shadow: 0 4px 15px rgba(0, 115, 170, 0.3);
+}
+
+/* ==========================================================================
+   Social Links - Animated
+   ========================================================================== */
+
+.wp-block-social-links .wp-block-social-link {
+	transition: transform var(--klyra-transition-normal), box-shadow var(--klyra-transition-normal);
+}
+
+.wp-block-social-links .wp-block-social-link:hover {
+	transform: translateY(-3px) scale(1.1);
+}
+
+.wp-block-social-links.is-style-logos-only .wp-block-social-link:hover {
+	opacity: 0.7;
+}
+
+/* Social links with background */
+.wp-block-social-links:not(.is-style-logos-only) .wp-block-social-link:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   Footer Styles - Premium
+   ========================================================================== */
+
+/* Footer container */
+footer.wp-block-template-part,
+.wp-block-template-part[data-slug*="footer"] {
+	position: relative;
+}
+
+/* Footer top border accent */
+footer.wp-block-template-part::before,
+.wp-block-template-part[data-slug*="footer"]::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, var(--wp--preset--color--primary, #0073aa), var(--wp--preset--color--accent, #00a0d2));
+}
+
+/* Footer headings */
+footer h4,
+footer .wp-block-heading {
+	position: relative;
+	padding-bottom: 0.75rem;
+	margin-bottom: 1rem;
+}
+
+footer h4::after,
+footer .wp-block-heading[style*="font-weight:700"]::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 30px;
+	height: 2px;
+	background: var(--wp--preset--color--primary, #0073aa);
+	border-radius: 2px;
+}
+
+/* Footer links */
+footer a:not(.wp-block-button__link):not(.wp-block-social-link-anchor) {
+	color: var(--wp--preset--color--muted, #6c757d);
+	text-decoration: none;
+}
+
+footer a:not(.wp-block-button__link):not(.wp-block-social-link-anchor):hover {
+	color: var(--wp--preset--color--primary, #0073aa);
+}
+
+/* Footer navigation vertical links */
+footer .wp-block-navigation.is-vertical .wp-block-navigation-item__content::after {
+	display: none;
+}
+
+footer .wp-block-navigation.is-vertical .wp-block-navigation-item__content:hover {
+	padding-left: 0.5em;
+}
+
+/* Footer bottom bar */
+footer .wp-block-separator {
+	margin: var(--wp--preset--spacing--large, 2rem) 0;
+	opacity: 0.15;
+}
+
+/* ==========================================================================
+   Search Block - Modern
+   ========================================================================== */
+
+.wp-block-search__inside-wrapper {
+	border-radius: var(--wp--custom--border-radius--full, 9999px);
+	overflow: hidden;
+	border: 1px solid var(--wp--preset--color--tertiary, #f0f0f0);
+	transition: border-color var(--klyra-transition-normal), box-shadow var(--klyra-transition-normal);
+}
+
+.wp-block-search__inside-wrapper:focus-within {
+	border-color: var(--wp--preset--color--primary, #0073aa);
+	box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+}
+
+.wp-block-search__input {
+	border: none;
+	padding: 0.75em 1.25em;
+}
+
+.wp-block-search__input:focus {
+	outline: none;
+}
+
+.wp-block-search__button {
+	border-radius: 0 var(--wp--custom--border-radius--full, 9999px) var(--wp--custom--border-radius--full, 9999px) 0;
+	padding: 0.75em 1.25em;
+	background: var(--wp--preset--color--primary, #0073aa);
+	color: #fff;
+	border: none;
+}
+
+.wp-block-search__button:hover {
+	background: var(--wp--preset--color--secondary, #005177);
+}
+
+/* ==========================================================================
+   WooCommerce Mini Cart - Premium
+   ========================================================================== */
+
+.wc-block-mini-cart__button {
+	position: relative;
+	transition: transform var(--klyra-transition-normal);
+}
+
+.wc-block-mini-cart__button:hover {
+	transform: scale(1.1);
+}
+
+.wc-block-mini-cart__badge {
+	animation: klyra-pulse 2s infinite;
+}
+
+/* ==========================================================================
+   Glassmorphism Header (Optional - add class .klyra-glass to header group)
+   ========================================================================== */
+
+.klyra-glass {
+	background: var(--klyra-glass-bg) !important;
+	backdrop-filter: var(--klyra-glass-blur);
+	-webkit-backdrop-filter: var(--klyra-glass-blur);
+	border-bottom: 1px solid var(--klyra-glass-border);
+}
+
+/* Transparent header (add class .klyra-transparent) */
+.klyra-transparent {
+	background: transparent !important;
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+}
+
+.klyra-transparent .wp-block-navigation-item__content,
+.klyra-transparent .wp-block-site-title a,
+.klyra-transparent p {
+	color: #fff;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.klyra-transparent .wp-block-navigation-item__content:hover {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.klyra-transparent .wp-block-navigation-item__content::after {
+	background: #fff;
+}
+
+/* ==========================================================================
+   Animations & Keyframes
+   ========================================================================== */
+
+@keyframes klyra-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes klyra-slide-in {
+	from {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes klyra-pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
+
+@keyframes klyra-shine {
+	from {
+		left: -100%;
+	}
+	to {
+		left: 100%;
+	}
+}
+
+/* ==========================================================================
+   Cover Block - Ensure images fill space
+   ========================================================================== */
+
 .wp-block-cover .wp-block-cover__image-background {
 	object-fit: cover !important;
 	object-position: center !important;
@@ -22,34 +468,97 @@
 	bottom: 0;
 }
 
-/* Ensure cover blocks have proper overflow handling */
 .wp-block-cover {
 	overflow: hidden;
 	position: relative;
 }
 
-/* Force images to scale larger if needed to fill space - ensures no empty areas */
 .wp-block-cover__image-background[data-object-fit="cover"] {
-	/* Scale image slightly larger to ensure complete coverage */
-	transform: scale(1.1);
+	transform: scale(1.02);
 	will-change: transform;
-	/* Ensure image covers entire area even if aspect ratios differ */
-	min-width: 110%;
-	min-height: 110%;
-	left: -5%;
-	top: -5%;
 }
 
-/* Ensure cover blocks fill their containers */
 .wp-block-column .wp-block-cover {
 	height: 100%;
 	min-height: 100%;
 }
 
-/* Responsive adjustments */
+/* ==========================================================================
+   Cards & Content Blocks
+   ========================================================================== */
+
+/* Card hover effect for grouped content */
+.wp-block-group.has-background:not(.alignfull) {
+	transition: transform var(--klyra-transition-normal), box-shadow var(--klyra-transition-normal);
+}
+
+.wp-block-group.has-background:not(.alignfull):hover {
+	transform: translateY(-2px);
+	box-shadow: var(--klyra-shadow-hover);
+}
+
+/* ==========================================================================
+   Form Inputs - Modern
+   ========================================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea,
+select {
+	border: 1px solid var(--wp--preset--color--tertiary, #f0f0f0);
+	border-radius: var(--wp--custom--border-radius--small, 0.25rem);
+	padding: 0.75em 1em;
+	transition: border-color var(--klyra-transition-normal), box-shadow var(--klyra-transition-normal);
+	font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--wp--preset--color--primary, #0073aa);
+	box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
 @media (max-width: 782px) {
-	.wp-block-cover__image-background[data-object-fit="cover"] {
-		transform: scale(1.1);
+	/* Mobile navigation */
+	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+		padding: 2rem;
+	}
+
+	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+		font-size: 1.25rem;
+		padding: 0.75em 0;
+	}
+
+	/* Reduce button effects on mobile */
+	.wp-block-button__link:hover {
+		transform: none;
+	}
+
+	/* Footer stacking */
+	footer .wp-block-columns {
+		gap: var(--wp--preset--spacing--large, 2rem);
 	}
 }
 
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+	header,
+	footer,
+	.wp-block-navigation {
+		box-shadow: none !important;
+	}
+}

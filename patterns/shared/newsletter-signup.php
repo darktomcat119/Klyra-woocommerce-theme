@@ -16,32 +16,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}},"backgroundColor":"primary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide has-primary-background-color has-background" style="padding-top:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--xl)">
-	<!-- wp:columns {"align":"wide"} -->
+<!-- wp:group {"align":"wide","backgroundColor":"surface","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl","left":"var:preset|spacing|large","right":"var:preset|spacing|large"}},"border":{"radius":"var(--wp--custom--border-radius--large)","color":"var:preset|color|tertiary","width":"1px"}}} -->
+<div class="wp-block-group alignwide has-surface-background-color has-background" style="border-color:var(--wp--preset--color--tertiary);border-width:1px;border-radius:var(--wp--custom--border-radius--large);padding-top:var(--wp--preset--spacing--xl);padding-right:var(--wp--preset--spacing--large);padding-bottom:var(--wp--preset--spacing--xl);padding-left:var(--wp--preset--spacing--large)">
+	<!-- wp:columns {"align":"wide","isStackedOnMobile":true,"style":{"spacing":{"blockGap":"var:preset|spacing|xl"}}} -->
 	<div class="wp-block-columns alignwide">
 		<!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
-			<!-- wp:heading {"level":2,"textColor":"background"} -->
-			<h2 class="wp-block-heading has-background-color has-text-color"><?php esc_html_e( 'Stay Updated', 'klyra' ); ?></h2>
+			<!-- wp:heading {"level":2,"style":{"typography":{"fontWeight":"700"}}} -->
+			<h2 class="wp-block-heading" style="font-weight:700"><?php esc_html_e( 'Stay Updated', 'klyra' ); ?></h2>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph {"textColor":"background"} -->
-			<p class="has-background-color has-text-color"><?php esc_html_e( 'Subscribe to our newsletter for the latest updates, exclusive offers, and news.', 'klyra' ); ?></p>
+			<!-- wp:paragraph {"textColor":"muted"} -->
+			<p class="has-muted-color has-text-color"><?php esc_html_e( 'Get launches, offers, and product tips. Add your preferred newsletter form block here (Mailchimp / FluentCRM / etc.).', 'klyra' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
 		<!-- wp:column {"verticalAlignment":"center","width":"40%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%">
-			<!-- wp:html -->
-			<div class="wp-block-html">
-				<form class="newsletter-form" style="display:flex;gap:var(--wp--preset--spacing--small);">
-					<input type="email" placeholder="<?php esc_attr_e( 'Your email address', 'klyra' ); ?>" required style="flex:1;padding:var(--wp--preset--spacing--medium);border-radius:4px;border:none;" />
-					<button type="submit" class="wp-block-button__link" style="padding:var(--wp--preset--spacing--medium) var(--wp--preset--spacing--large);background-color:var(--wp--preset--color--background);color:var(--wp--preset--color--primary);border:none;border-radius:4px;cursor:pointer;white-space:nowrap;"><?php esc_html_e( 'Subscribe', 'klyra' ); ?></button>
-				</form>
+			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|xs"}}} -->
+			<div class="wp-block-buttons">
+				<!-- wp:button -->
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#"><?php esc_html_e( 'Subscribe', 'klyra' ); ?></a></div>
+				<!-- /wp:button -->
+				<!-- wp:button {"className":"is-style-outline"} -->
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#"><?php esc_html_e( 'Learn More', 'klyra' ); ?></a></div>
+				<!-- /wp:button -->
 			</div>
-			<!-- /wp:html -->
+			<!-- /wp:buttons -->
 		</div>
 		<!-- /wp:column -->
 	</div>

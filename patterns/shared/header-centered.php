@@ -17,20 +17,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<!-- wp:group {"align":"full","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"18px","bottom":"18px"}}}} -->
-<div class="wp-block-group alignfull" style="padding-top:18px;padding-bottom:18px">
-	<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"},"style":{"spacing":{"blockGap":"12px"}}} -->
+<!-- wp:group {"align":"full","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}},"border":{"bottom":{"color":"var:preset|color|tertiary","width":"1px"}}}} -->
+<div class="wp-block-group alignfull" style="border-bottom-color:var(--wp--preset--color--tertiary);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)">
+	<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"},"style":{"spacing":{"blockGap":"14px"}}} -->
 	<div class="wp-block-group alignwide">
-		<!-- wp:site-logo {"width":56,"shouldSyncIcon":true} /-->
+		<!-- wp:site-logo {"width":58,"shouldSyncIcon":true} /-->
 		<!-- wp:site-title {"level":0,"style":{"typography":{"fontWeight":"700"}}} /-->
+		<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+		<!-- wp:woocommerce/mini-cart {"miniCartIcon":"bag"} /-->
+		<?php endif; ?>
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:spacer {"height":"10px"} -->
-	<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
-
-	<!-- wp:navigation {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|medium"}}} /-->
+	<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|xs"},"blockGap":"var:preset|spacing|medium"}}} -->
+	<div class="wp-block-group alignwide" style="margin-top:var(--wp--preset--spacing--xs)">
+		<!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"center"},"overlayMenu":"mobile","style":{"spacing":{"blockGap":"var:preset|spacing|medium"}}} /-->
+	</div>
+	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 

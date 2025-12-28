@@ -86,6 +86,9 @@ class ThemeSetup {
 
 		// Add support for automatic feed links
 		add_theme_support( 'automatic-feed-links' );
+
+		// Keep Customizer available for users coming from classic themes.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
 
 	/**

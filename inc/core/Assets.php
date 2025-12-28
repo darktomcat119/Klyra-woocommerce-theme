@@ -30,6 +30,16 @@ class Assets {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'after_setup_theme', array( $this, 'add_editor_styles' ) );
+	}
+
+	/**
+	 * Add editor styles so styling appears in block editor too
+	 *
+	 * @since 1.0.0
+	 */
+	public function add_editor_styles() {
+		add_editor_style( 'assets/css/style.css' );
 	}
 
 	/**
@@ -39,12 +49,14 @@ class Assets {
 	 */
 	public function enqueue_styles() {
 		// Enqueue theme stylesheet if it exists
-		if ( file_exists( get_template_directory() . '/assets/css/style.css' ) ) {
+		$css_path = get_template_directory() . '/assets/css/style.css';
+		if ( file_exists( $css_path ) ) {
+			$ver = (string) filemtime( $css_path );
 			wp_enqueue_style(
 				'klyra-style',
 				get_template_directory_uri() . '/assets/css/style.css',
 				array(),
-				KLYRA_VERSION
+				$ver
 			);
 		}
 	}

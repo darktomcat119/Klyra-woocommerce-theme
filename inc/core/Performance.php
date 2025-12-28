@@ -63,6 +63,11 @@ class Performance {
 	 * @since 1.0.0
 	 */
 	public function defer_scripts( $tag, $handle ) {
+		// Only touch theme-owned scripts to avoid breaking plugins/core.
+		if ( strpos( (string) $handle, 'klyra-' ) !== 0 ) {
+			return $tag;
+		}
+
 		// Don't defer critical scripts
 		$critical_scripts = array(
 			'wp-embed',
